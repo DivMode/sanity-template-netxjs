@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "project": {
+    "name": "curivine",
+    "basePath": "/studio"
+  },
+  "api": {
+    "projectId": "placeholder",
+    "dataset": "placeholder"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/production-preview",
+    "asset-source-unsplash",
+    "asset-source-thispersondoesnotexist"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision",
+        "@sanity/production-preview"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./resolveProductionUrl.js"
+    },
+    {
+      "implements": "part:@sanity/desk-tool/structure",
+      "path": "./src/deskStructure"
+    }
+  ]
+}
