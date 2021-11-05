@@ -5,8 +5,8 @@
     "dev": "concurrently \"next\" \"cd studio && sanity start\"",
     "build": "npm run build:sanity && npm run build:web",
     "build:web": "next build",
-    "build:sanity": "cd studio && npx sanity build ../public/studio -y && cd ..",
-    "postinstall": "lerna bootstrap",
+    "build:sanity": "echo 'Building Sanity to public/studio…' && cd studio && npx sanity build ../public/studio -y && cd ..",
+    "postinstall": "cd studio && npm install",
     "start": "next start",
     "lint": "next lint"
   },
@@ -18,7 +18,6 @@
   "devDependencies": {
     "concurrently": "^6.3.0",
     "eslint": "7.32.0",
-    "eslint-config-next": "12.0.2",
-    "lerna": "^4.0.0"
+    "eslint-config-next": "12.0.2"
   }
 }
